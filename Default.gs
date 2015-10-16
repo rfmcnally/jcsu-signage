@@ -1,0 +1,4 @@
+function triggerUpdates() {
+  listVendors();
+  listSchedule();
+}
