@@ -9,7 +9,7 @@ function listSchedule() {
   //Fetch the feed and identify the entries.
   var now = new Date()
   Logger.log('Time of execution: ' + now)
-  var url = 'https://www.cisweb3.unr.edu/MasterCalendar/RSSFeeds.aspx?data=qaUdY1wvEciJ2wvy%2fMP8sozpmLvXbcMTIhk9OQhJHvq4q7tFs6SAyg%3d%3d';
+  var url = 'FEED_URL_HERE';
   Logger.log('Feed URL: ' + url);
   var xml = UrlFetchApp.fetch(url).getContentText();
   var document = XmlService.parse(xml);
@@ -44,7 +44,7 @@ function listSchedule() {
   }
   
   //Open BUILDING SCHEDULE MASTER Google Spreadsheet and fetch SCEHDULE sheet. Clear the sheet to start from scratch.
-  var ss = SpreadsheetApp.openById('1X-cfei3yn9sNF--R7qGUlpyeJiqw3y2O7gerEHlpFLY');
+  var ss = SpreadsheetApp.openById('SPREADSHEET_ID_HERE');
   var sheet = ss.getSheetByName('SCHEDULE');
   Logger.log("Google Spreadsheet: " + ss.getName() + " - " + sheet.getName());
   sheet.clear();
